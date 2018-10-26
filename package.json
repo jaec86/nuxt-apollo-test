@@ -1,0 +1,11 @@
+{
+  "name": "my-app",
+  "scripts": {
+    "dev": "nuxt"
+  },
+  "dependencies": {
+    "@nuxtjs/apollo": "^4.0.0-rc2.3",
+    "graphql-tag": "^2.10.0",
+    "nuxt": "^2.2.0"
+  }
+}

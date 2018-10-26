@@ -1,0 +1,35 @@
+query ($first: Int = 6, $after: String = null, $sortKey: ProductCollectionSortKeys = CREATED, $reverse: Boolean = false){
+  shop {
+    collectionByHandle(handle: "all-products") {
+      products(first: $first, after: $after, sortKey: $sortKey, reverse: $reverse) {
+        pageInfo {
+          hasNextPage
+        }
+        edges {
+          cursor
+          node {
+            createdAt
+            id
+            handle
+            title
+            description
+            images(first: 1) {
+              edges {
+                node {
+                  id
+                  originalSrc
+                }
+              }
+            }
+            priceRange {
+              minVariantPrice {
+                amount
+                currencyCode
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
